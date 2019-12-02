@@ -16,7 +16,8 @@ public class HighVolumeIntegerSet implements IntegerSet {
   // MODIFIES: this
   // EFFECTS:  inserts integer into set unless it's already there, in which case do nothing
   @Override
-  public void insert(Integer num) {
+  public void insert(Integer num){
+    System.out.println("sneaky print statement about insert");
     data.add(num);
   }
 

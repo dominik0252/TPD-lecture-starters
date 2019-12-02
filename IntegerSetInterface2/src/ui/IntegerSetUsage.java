@@ -1,5 +1,8 @@
 package ui;
 
+import model.ChattyIntegerSet;
+import model.IntegerSet;
+
 public class IntegerSetUsage {
 
   // NOTE: this project accompanies the Subclasses & Extends, Part 4 (Super calls) video
@@ -12,6 +15,9 @@ public class IntegerSetUsage {
 //        mySet.remove(3);
 //        System.out.println("Does the set contain number 3? "+ mySet.contains(3));
 //        System.out.println("The size of the set is: "+ mySet.size());
+
+    IntegerSet is = new ChattyIntegerSet();
+    is.insert(5);
   }
 
 
