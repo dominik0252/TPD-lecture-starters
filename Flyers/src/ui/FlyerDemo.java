@@ -11,7 +11,7 @@ public class FlyerDemo {
     Airplane planie = new Airplane();
     Cafe cafePlane = new Airplane();
     Flyer flyerPlane = new Airplane();
-
+    PrivatePlane pp = new PrivatePlane();
 
     birdie.fly();
     cafePlane.serveDrinks();
@@ -20,6 +20,11 @@ public class FlyerDemo {
     fd.lunchService(cafePlane);
     fd.firstPartOfFlight(planie);
     // fd.firstPartOfFlight(flyerPlane); - not possible, Flyer is not subclass of Airplane
+    fd.luxuryTakeoff(pp);
+    // fd.luxuryTakeoff(planie); - not possible, Airplane is not subclass of PrivatePlane
+
+    pp.fly();
+    pp.bringWarmTowels();
   }
 
   public void lunchService(Cafe c){
@@ -32,5 +37,9 @@ public class FlyerDemo {
     a.serveDrinks();
   }
 
+  public void luxuryTakeoff(PrivatePlane p) {
+    p.takeOff();
+    p.bringWarmTowels();
+  }
 
 }
