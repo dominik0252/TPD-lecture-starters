@@ -7,13 +7,17 @@ public class FlyerDemo {
   // NOTE: this project goes with the Subclasses & Extends, Pt. 2 (Extending) Video
 
   public static void main(String[] args) {
-    Bird birdie = new Bird();
+    // Bird birdie = new Bird(); - not possible anymore
+    Bird hawk = new Hawk();
+    Bird hummingbird = new HummingBird();
     Airplane planie = new Airplane();
     Cafe cafePlane = new Airplane();
     Flyer flyerPlane = new Airplane();
     PrivatePlane pp = new PrivatePlane();
 
-    birdie.fly();
+    hawk.fly();
+    hawk.takeOff();
+    hawk.land();
     cafePlane.serveDrinks();
 
     FlyerDemo fd = new FlyerDemo();
