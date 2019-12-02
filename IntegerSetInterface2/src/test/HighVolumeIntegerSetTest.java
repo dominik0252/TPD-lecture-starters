@@ -9,32 +9,15 @@ import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
-public class HighVolumeIntegerSetTest {
+public class HighVolumeIntegerSetTest extends IntegerSetTest {
 
   // NOTE: this project accompanies the Subclasses & Extends, Part 4 (Super calls) video
 
-  private IntegerSet testSet;
+  // private IntegerSet testSet; - overrides testSet variable from abstract class -> methods declared in abstract class won't see it
 
   @Before
   public void setup(){
     testSet = new HighVolumeIntegerSet();
-  }
-
-  @Test
-  public void testInsertNotThere(){
-    checkSetEmptyDoesntContain(3);
-    testSet.insert(3);
-    checkSetContainsOnce(3);
-  }
-
-  @Test
-  public void testInsertAlreadyThere(){
-    checkSetEmptyDoesntContain(3);
-    testSet.insert(3);
-    checkSetContainsOnce(3);
-    testSet.insert(3);
-    checkSetContainsOnce(3);
-
   }
 
   @Test
@@ -45,16 +28,4 @@ public class HighVolumeIntegerSetTest {
       assertEquals(testSet.size(), i+1);
     }
   }
-
-  private void checkSetEmptyDoesntContain(int num) {
-    assertEquals(testSet.size(), 0);
-    assertFalse(testSet.contains(num));
-  }
-
-  private void checkSetContainsOnce(int num) {
-    assertEquals(testSet.size(), 1);
-    assertTrue(testSet.contains(num));
-  }
-
-
 }
