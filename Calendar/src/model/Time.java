@@ -8,5 +8,5 @@ public class Time {
 
   // REQUIRES:  format 'AM/PM', '24'
   // EFFECTS:   returns time in the given format
-  public String getTime(String format) { return null; }
+  public String getTimeInFormat(String format) { return null; }
 }

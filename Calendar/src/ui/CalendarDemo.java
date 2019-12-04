@@ -2,6 +2,8 @@ package ui;
 
 import model.*;
 
+import java.util.ArrayList;
+
 public class CalendarDemo {
   public static void main(String[] args) {
     Event e1 = new Event(new Date(2019,12,12), new Time(8,0),"First Event" ,null);
@@ -20,7 +22,15 @@ public class CalendarDemo {
     m1.addAttendee("scott.tiger@example.com");
     m1.addAttendee("jane.doe@example.com");
     m1.addAttendee("dominik.vidusin@example.com");
-    System.out.println("Attendees at " + m1.getLabel() + " are" + m1.getAttendees());
+    System.out.print("Attendees at " + m1.getLabel() + " are:");
+    ArrayList<String> attendees = m1.getAttendees();
+    for (int i = 0; i < attendees.size(); i++) {
+      System.out.print(attendees.get(i));
+      if (i != attendees.size() - 1) {
+        System.out.print(", ");
+      }
+    }
+    System.out.println("");
     m1.removeAttendee("dominik.vidusin@example.com");
     System.out.println(m1.sendInvites());
   }
