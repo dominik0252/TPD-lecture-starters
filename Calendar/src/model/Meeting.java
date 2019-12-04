@@ -1,6 +1,10 @@
 package model;
 
 public class Meeting extends Event {
+  public Meeting(Date date, Time time, String label, String interval) {
+    super(date, time, label, interval);
+  }
+
   // EFFECTS: returns comma separated list of attendee emails
   public String getAttendees() { return null; }
 

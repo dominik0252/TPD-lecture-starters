@@ -8,5 +8,5 @@ public class Date {
 
   // REQUIRES:  formats 'YYYY-MM-DD' 'DD-MM-YYYY' 'Month, DD YYYY'
   // EFFECTS:   returns date in the given format
-  public String getDate(String format) { return null; };
+  public String getDateInFormat(String format) { return null; };
 }
