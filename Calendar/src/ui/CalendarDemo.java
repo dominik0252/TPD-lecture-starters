@@ -14,7 +14,7 @@ public class CalendarDemo {
 
     if (e2.isRepeating()) {
       System.out.println("Event " + e2.getLabel() + " will be repeated every " + e2.getInterval() + " at " +
-                          e2.getTime() + " starting on " + e2.getDate().getDateInFormat("Month, DD YYYY"));
+                          e2.getTime().getTimeInFormat("24") + " starting on " + e2.getDate().getDateInFormat("Month DD, YYYY"));
     }
 
     Meeting m1 = new Meeting(new Date(2019,12,13), new Time(19, 0),

@@ -3,6 +3,7 @@ package test;
 import model.Date;
 import model.Meeting;
 import model.Time;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class MeetingTest {
   String testEmail1;
   String testEmail2;
 
+  @BeforeEach
   public void setUp() {
     testEmail1 = "jane.doe@example.com";
     testEmail2 = "scott.tiger@example.com";
@@ -27,13 +29,13 @@ public class MeetingTest {
     assertEquals(0, m1.getAttendees().size());
     m1.addAttendee(testEmail1);
     assertEquals(1, m1.getAttendees().size());
-    assertEquals(testEmail1, m1.getAttendees().get(m1.getAttendees().size()));
+    assertEquals(testEmail1, m1.getAttendees().get(m1.getAttendees().size() - 1));
     m1.addAttendee(testEmail2);
     assertEquals(2, m1.getAttendees().size());
-    assertEquals(testEmail2, m1.getAttendees().get(m1.getAttendees().size()));
+    assertEquals(testEmail2, m1.getAttendees().get(m1.getAttendees().size() - 1));
     m1.addAttendee(testEmail1);
     assertEquals(2, m1.getAttendees().size());
-    assertEquals(testEmail2, m1.getAttendees().get(m1.getAttendees().size()));
+    assertEquals(testEmail2, m1.getAttendees().get(m1.getAttendees().size() - 1));
   }
 
   @Test
@@ -63,9 +65,9 @@ public class MeetingTest {
   public void testSendInvites() {
     String expected = "Sending invites...\n" +
                       "To: " + testEmail1 + "; " + testEmail2 + "\n" +
-                      "Hey, come to " + m1.getLabel() +
-                      " on " + m1.getDate().getDateInFormat("Month, DD YYYY") +
-                      " at " + m1.getTime().getTimeInFormat("24") + "!\n" +
+                      "Hey,\ncome to " + m1.getLabel() +
+                      " on December 13, 2019" +
+                      " at 19:00" + "!\n" +
                       "See you!\n";
     m1.addAttendee(testEmail1);
     m1.addAttendee(testEmail2);
